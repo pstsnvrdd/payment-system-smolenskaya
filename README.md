@@ -1,44 +1,21 @@
-# payment-system-smolenskaya
+# Notification System
 
-## Overview
+## Setup Instructions
 
-A modular, extensible backend for dispatching notifications across multiple channels (email, SMS, push). Clean architecture, config-driven, and testable.
+1. Clone the repository.
+2. Set up a virtual environment using `uv`.
+3. Install dependencies.
+4. Create a `.env` file from `.env.example`.
+5. Run migrations using Alembic.
 
 ## Design Rationale
 
-- **Channel Abstraction:** All channels implement a simple interface for easy extension and testability.
-- **Routing:** Strategy-based routing supports user preference, message priority, and fallback logic.
-- **Observer Pattern:** Decouples notification events from listeners (logging, audit, etc.).
-- **Configuration:** `.env` controls enabled channels, priorities, and fallback policies.
-- **API:** FastAPI (REST) chosen for rapid dev, wide compatibility, and async support.
+The system is designed to be modular, allowing for easy extension of notification channels. Each component has a single responsibility, making the codebase easier to maintain.
 
-## Transport Choice Justification
+## Transport Mechanism Justification
 
-REST (FastAPI) is chosen for its simplicity, testability, and broad client support. gRPC is an option for high throughput, but REST suffices for most notification systems.
+FastAPI is chosen for its speed and ease of use for building APIs. It supports asynchronous processing, which is beneficial for handling notifications.
 
-## Setup
+## Test Suite
 
-1. Clone repo and `cd payment-system-smolenskaya`
-2. Install `uv` and create env:
-    ```
-    pip install uv
-    uv venv
-    uv pip install -r requirements.txt
-    ```
-3. Copy `.env.example` to `.env` and adjust as needed.
-4. Start the server:
-    ```
-    uvicorn app.main:app --reload
-    ```
-
-## API Examples
-
-**POST /notify**
-
-```json
-{
-  "user_id": "user_123",
-  "message": "Welcome to our platform!",
-  "channels": ["sms", "email"],
-  "priority": "high"
-}
+Run tests using `pytest` to ensure coverage for main components.
