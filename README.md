@@ -26,11 +26,7 @@ REST (FastAPI) is chosen for its simplicity, testability, and broad client suppo
     uv pip install -r requirements.txt
     ```
 3. Copy `.env.example` to `.env` and adjust as needed.
-4. Run Alembic migrations:
-    ```
-    alembic upgrade head
-    ```
-5. Start the server:
+4. Start the server:
     ```
     uvicorn app.main:app --reload
     ```
