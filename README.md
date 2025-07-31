@@ -1,4 +1,4 @@
-# notification-system-{your-name}
+# notification-system-smolenskaya
 
 ## Overview
 
