@@ -1,4 +1,4 @@
-# notification-system-smolenskaya
+# payment-system-smolenskaya
 
 ## Overview
 
@@ -18,7 +18,7 @@ REST (FastAPI) is chosen for its simplicity, testability, and broad client suppo
 
 ## Setup
 
-1. Clone repo and `cd notification-system-{your-name}`
+1. Clone repo and `cd payment-system-smolenskaya`
 2. Install `uv` and create env:
     ```
     pip install uv
